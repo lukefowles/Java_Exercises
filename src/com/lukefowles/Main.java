@@ -58,15 +58,22 @@ public class Main {
 
     static void longestStringMethod(String [] words) {
         int letterCount = 0;
+        String longestWords = "";
         for (String word: words){
             if (word.length() > letterCount){
                 letterCount = word.length();
             }
         }
         for (String word: words) {
-            if (word.length() == letterCount) {
-                System.out.println(word);
+            if (word.length() == letterCount){
+                if (longestWords.equals("")){
+                    longestsWords = longestWords + word;
+                }
+                else{
+                    longestWords = ", " + word;
+                }
             }
+                System.out.print(longestWords);
         }
     }
 }

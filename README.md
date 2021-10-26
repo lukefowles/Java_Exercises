@@ -1,1 +1,1 @@
-# Java_day_01_BNTA
+# Java Exercises From BNTA 

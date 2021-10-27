@@ -13,12 +13,17 @@ public class Read_file {
         File file = new File("src/people.txt");
         try {
             Scanner scanner = new Scanner(file);
-            //ignore first line
-            scanner.nextLine();
-            while(scanner.hasNext()) {
-                String[] personData = scanner.nextLine().split(",");
-                Person person = new Person(personData[0], personData[1], personData[2], personData[3], personData[4]);
-                people.add(person);
+            if(scanner.hasNextLine()){
+                //ignore first line
+                scanner.nextLine();
+                while(scanner.hasNext()) {
+                    if (scanner.nextLine().isEmpty() == false)
+                    {
+                        String[] personData = scanner.nextLine().split(",");
+                        Person person = new Person(personData[0], personData[1], personData[2], personData[3], personData[4]);
+                        people.add(person);
+                    }
+                }
             }
         } catch(FileNotFoundException e) {
              e.printStackTrace();
